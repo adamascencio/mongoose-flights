@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<h2>Enter Your Flight Information</h2>
+<form action="/flights" method="POST">
+  <ul class="form-flx">
+    <li>
+      <label for="airline">Enter the Airline: <input type="text" name="airline"></label>
+    </li>
+    <li>
+      <label for="airport">Enter the Airport: <input type="text" for="airport"></label>
+    </li>
+    <li>
+      <label for="flightNo">Enter the Flight Number: <input type="number" for="flightNo"></label>
+    </li>
+    <li>
+      <label for="departs">Enter your Departure Date: <input type="date" for="departs"></label>
+    </li>
+  </ul>
+  <button type="submit">ADD FLIGHT INFO</button>
+</form>
+
+<%- include('../partials/footer') %>
