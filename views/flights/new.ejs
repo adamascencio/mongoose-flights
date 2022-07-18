@@ -4,16 +4,30 @@
 <form action="/flights" method="POST">
   <ul class="form-flx">
     <li>
-      <label for="airline">Enter the Airline: <input type="text" name="airline"></label>
+      <label for="airline">Enter the Airline: 
+        <select name="airline" id="airline">
+          <option value="American">American</option>
+          <option value="Southwest">Southwest</option>
+          <option value="United">United</option>
+        </select>
+      </label>
     </li>
     <li>
-      <label for="airport">Enter the Airport: <input type="text" for="airport"></label>
+      <label for="airport">Enter the Airport: 
+        <select name="airport" id="airport">
+          <option value="AUS">AUS</option>
+          <option value="DFW">DFW</option>
+          <option value="DEN">DEN</option>
+          <option value="LAX">LAX</option>
+          <option value="SAN">SAN</option>
+        </select>
+      </label>
     </li>
     <li>
-      <label for="flightNo">Enter the Flight Number: <input type="number" for="flightNo"></label>
+      <label for="flightNo">Enter the Flight Number: <input type="number" for="flightNo" name="flightNo"></label>
     </li>
     <li>
-      <label for="departs">Enter your Departure Date: <input type="date" for="departs"></label>
+      <label for="departs">Enter your Departure Date: <input type="datetime-local" for="departs"></label>
     </li>
   </ul>
   <button type="submit">ADD FLIGHT INFO</button>
