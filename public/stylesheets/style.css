@@ -12,6 +12,10 @@ ul {
   margin: 25px 0;
 }
 
+th, td {
+  padding: 5px 20px;
+}
+
 .form-flx {
   display: flex;
   flex-direction: column;
