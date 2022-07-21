@@ -1,0 +1,62 @@
+<a href="/flights">ALL FLIGHTS</a>
+
+<h2>Flight Information:</h2>
+<section id="show-flight-info">
+  <div>Airline:</div>
+  <div><%= flight.airline %></div>
+  <div>Airport:</div>
+  <div><%= flight.airport %></div>
+  <div>Flight Number:</div>
+  <div><%= flight.flightNo %></div>
+  <div>Departure Info:</div>
+  <div>
+    <%= flight.departs.toLocaleDateString('en-US', {month: '2-digit', day: '2-digit', year: 'numeric'}) %>
+    <%= flight.departs.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'}) %>
+  </div>
+</section>
+
+<h2>Add Destinations: </h2>
+<form id="add-destination" method="POST" action="/flights/<%= flight._id %>/destinations">
+  <label for="airport">Arrival Airport: </label>
+  <select name="airport" id="airport">
+    <option value="AUS">AUS</option>
+    <option value="DFW">DFW</option>
+    <option value="DEN">DEN</option>
+    <option value="LAX">LAX</option>
+    <option value="SAN">SAN</option>
+  </select>
+  <label for="arrival">Enter Arrival Date and Time: </label>
+  <input type="datetime-local" name="arrival" id="arrival">
+  <button type="submit">Add Flight Info</button>
+</form>
+
+<% if (flight.destinations.length) { %>
+<table>
+  <thead>
+    <tr>
+      <th>Airport</th>
+      <th>Arrival Date</th>
+      <th>Arrival Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% flight.destinations.forEach(function(f) { %>
+      <tr>
+        <td>
+          <%= f.airport %>
+        </td>
+        <td>
+          <%= f.arrival.toLocaleDateString('en-US', {month: '2-digit' , day: '2-digit' , year: 'numeric' }) %>
+        </td>
+        <td>
+          <%= f.arrival.toLocaleTimeString('en-US', {hour: '2-digit' , minute: '2-digit' }) %>
+        </td>
+      </tr>
+      <% }); %>
+  </tbody>
+</table>
+<% } else { %>
+  <h3>No Destinations Yet</h3>
+<% } %>
+
+<%- include('../partials/footer') %>
