@@ -1,4 +1,4 @@
-<form id="add-tickets" method="POST" action="/tickets">
+<form id="add-tickets" method="POST" action="/flights/<%= flightId %>/tickets">
   <label for="seat">Seat Number: </label>
   <input id="seat" name="seat" required pattern="[A-F][1-9]\d?"><br>
   <label for="price">Price: </label>
